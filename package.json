@@ -10,10 +10,10 @@
     "lint:fix": "eslint ./Simulator --ext .js --ext .jsx --fix --cache",
     "start": "node node_modules/npm-run-all/bin/npm-run-all --parallel corsproxy http-server",
     "start:bundle": "node node_modules/npm-run-all/bin/npm-run-all --parallel corsproxy http-server bundle",
-    "end-to-end": "node_modules/.bin/mocha --compilers js:babel-core/register --recursive ./Simulator/tests/end-to-end",
-    "unit": "node_modules/.bin/mocha --compilers js:babel-core/register --recursive  Simulator/tests/unit",
-    "unit:coverage": "node_modules/.bin/nyc --check-coverage --lines 70 --functions 70 --branch 70 npm run unit",
-    "unit:coveralls": "node_modules/.bin/nyc --reporter=text-lcov --check-coverage --lines 70 --functions 70 --branch 70 npm run unit | coveralls",
+    "end-to-end": "mocha --compilers js:babel-core/register --recursive ./Simulator/tests/end-to-end",
+    "unit": "mocha --compilers js:babel-core/register --recursive  Simulator/tests/unit",
+    "unit:coverage": "nyc --check-coverage --lines 70 --functions 70 --branch 70 npm run unit",
+    "unit:coveralls": "nyc --reporter=text-lcov --check-coverage --lines 70 --functions 70 --branch 70 npm run unit | coveralls",
     "test": "node node_modules/npm-run-all/bin/npm-run-all end-to-end unit:coverage",
     "test:travis": "node node_modules/npm-run-all/bin/npm-run-all unit:coveralls end-to-end"
   },
@@ -63,9 +63,11 @@
     "vis": "^4.16.1"
   },
   "dependencies": {
+    "convert-excel-to-json": "^1.6.1",
     "corsproxy": "^1.4.0",
     "http-server": "^0.9.0",
-    "npm-run-all": "^2.1.1"
+    "npm-run-all": "^2.1.1",
+    "xls-to-json": "^0.5.1"
   },
   "nyc": {
     "include": [
@@ -78,5 +80,13 @@
     "extension": [
       ".jsx"
     ]
+  },
+  "bugs": {
+    "url": "https://github.com/tableau/webdataconnector/issues"
+  },
+  "homepage": "https://github.com/tableau/webdataconnector#readme",
+  "main": "earthquakeWDC.js",
+  "directories": {
+    "doc": "docs"
   }
 }
