@@ -137,7 +137,7 @@
 
   myConnector.getSchema = function(schemaCallback) {
 
-    let cols = [{
+    var cols = [{
       id: 'id',
       dataType: tableau.dataTypeEnum.string
     }, {
@@ -158,7 +158,7 @@
       dataType: tableau.dataTypeEnum.string
     }];
 
-    let tableSchema = {
+    var tableSchema = {
       id: 'conversionFeed',
       alias: 'Feed of Nike conversions in one week',
       columns: cols
@@ -196,7 +196,7 @@ myConnector.getData = function(table, doneCallback) {
 //     table.appendRows(tableData);
 //     doneCallback();
 //     });
-    let tableData = myConnector.getNikeData();
+    var tableData = myConnector.getNikeData();
     // let tableData = getConversionData();
      table.appendRows(tableData);
      console.log(tableData);
