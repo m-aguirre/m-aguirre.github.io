@@ -193,10 +193,9 @@ myConnector.getData = function(table, doneCallback) {
 //     table.appendRows(tableData);
 //     doneCallback();
 //     });
-    var tableData = myConnector.getNikeData();
+    var tableData = dataAsJson;
     // let tableData = getConversionData();
      table.appendRows(tableData);
-     console.log(tableData);
      doneCallback();
   };
 
