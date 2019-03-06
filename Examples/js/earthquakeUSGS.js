@@ -67,7 +67,7 @@
 
     myConnector.getNikeData = function() {
 
-      let dataAsJson = [ { id: 0,
+      return [ { id: 0,
         start: 'Feb 25, 2019',
         conversions: 15172,
         end: 'Feb 25, 2019',
@@ -103,7 +103,6 @@
                     end: 'Mar 3, 2019',
                     percent: 1 } ];
 
-      return dataAsJson;
     }
 
     var myConnector = tableau.makeConnector();
