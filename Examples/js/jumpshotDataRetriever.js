@@ -91,3 +91,14 @@ $(document).ready(function () {
         tableau.submit();
     });
 });
+
+$(document).ready(function() {
+  $("#fileNameRetriever").click(function() {
+    var fileNames = fileNames();
+
+  })
+});
+
+fileNames = function() {
+  return ["exampleJanuary.tsv", "exampleFebruary.tsv"]
+}
