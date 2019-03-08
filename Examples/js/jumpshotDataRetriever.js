@@ -103,7 +103,7 @@ $(document).ready(function() {
   //
   // })
   var fileNames = ["exampleJanuary.tsv", "exampleFebruary.tsv"];
-  $.each(fileNames, function(name) {
+  $.each(fileNames, function(index, name) {
     $('#data-file-selector').append($("<option></option>")
                             .attr("value", name)
                             .text(name)
