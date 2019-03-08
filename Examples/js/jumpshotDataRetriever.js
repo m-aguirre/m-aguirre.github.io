@@ -1,6 +1,8 @@
 
 (function () {
 
+  var fileNames = ["exampleJanuary.tsv", "exampleFebruary.tsv"];
+
   var dataAsJson = [ { id: 0,
   start: 'Feb 25, 2019',
   conversions: 15172,
@@ -81,6 +83,9 @@ myConnector.getData = function(table, doneCallback) {
      doneCallback();
   };
 
+  myConnector.getFileNames = function() {
+    return fileNames
+  }
     tableau.registerConnector(myConnector);
 })();
 
@@ -97,7 +102,7 @@ $(document).ready(function() {
   //   var fileNames = fileNames();
   //
   // })
-  var fileNames = fileNames();
+  var fileNames = myConnector.getFileNames();
   $.each(fileNames, function(name) {
     $('#data-file-selector').append($("<option></option>")
                             .attr("value", name)
@@ -105,7 +110,3 @@ $(document).ready(function() {
                           );
   });
 });
-
-fileNames = function() {
-  return ["exampleJanuary.tsv", "exampleFebruary.tsv"]
-}
