@@ -93,10 +93,17 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
-  $("#fileNameRetriever").click(function() {
-    var fileNames = fileNames();
-
-  })
+  // $("#fileNameRetriever").click(function() {
+  //   var fileNames = fileNames();
+  //
+  // })
+  var fileNames = fileNames();
+  $.each(fileNames, function(name) {
+    $('#data-file-selector').append($("<option></option>")
+                            .attr("value", name)
+                            .text(name)
+                          );
+  });
 });
 
 fileNames = function() {
