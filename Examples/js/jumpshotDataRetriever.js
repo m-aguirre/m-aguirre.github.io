@@ -102,7 +102,7 @@ $(document).ready(function() {
   //   var fileNames = fileNames();
   //
   // })
-  var fileNames = myConnector.getFileNames();
+  var fileNames = ["exampleJanuary.tsv", "exampleFebruary.tsv"];
   $.each(fileNames, function(name) {
     $('#data-file-selector').append($("<option></option>")
                             .attr("value", name)
